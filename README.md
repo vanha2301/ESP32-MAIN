@@ -1,46 +1,51 @@
+# lib/ Directory – Project Specific Libraries
 
-This directory is intended for project specific (private) libraries.
-PlatformIO will compile them to static libraries and link into the executable file.
+This directory is intended for **project-specific (private) libraries**.  
+PlatformIO will compile them to static libraries and link them into the executable file.
 
-The source code of each library should be placed in a separate directory
-("lib/your_library_name/[Code]").
+The source code of each library should be placed in a separate directory:  
+`lib/your_library_name/[Code]`
 
-For example, see the structure of the following example libraries `Foo` and `Bar`:
+## Example Structure
 
-|--lib
-|  |
-|  |--Bar
-|  |  |--docs
-|  |  |--examples
-|  |  |--src
-|  |     |- Bar.c
-|  |     |- Bar.h
-|  |  |- library.json (optional. for custom build options, etc) https://docs.platformio.org/page/librarymanager/config.html
-|  |
-|  |--Foo
-|  |  |- Foo.c
-|  |  |- Foo.h
-|  |
-|  |- README --> THIS FILE
-|
-|- platformio.ini
-|--src
-   |- main.c
-
-Example contents of `src/main.c` using Foo and Bar:
 ```
+lib/
+├── Bar/
+│   ├── docs/
+│   ├── examples/
+│   ├── src/
+│   │   ├── Bar.c
+│   │   └── Bar.h
+│   └── library.json  ← Optional: custom build options
+│
+├── Foo/
+│   ├── Foo.c
+│   └── Foo.h
+│
+└── README.md ← THIS FILE
+
+platformio.ini
+src/
+└── main.c
+```
+
+📘 Reference: [`library.json`](https://docs.platformio.org/page/librarymanager/config.html)
+
+## Example `src/main.c` using Foo and Bar
+
+```c
 #include <Foo.h>
 #include <Bar.h>
 
-int main (void)
+int main(void)
 {
-  ...
+    // Your application code here
 }
-
 ```
 
-The PlatformIO Library Dependency Finder will find automatically dependent
-libraries by scanning project source files.
+## Library Dependency Finder (LDF)
 
-More information about PlatformIO Library Dependency Finder
-- https://docs.platformio.org/page/librarymanager/ldf.html
+PlatformIO’s **Library Dependency Finder** will automatically detect required libraries  
+by scanning your project's source code.
+
+🔗 Learn more: [PlatformIO LDF Documentation](https://docs.platformio.org/page/librarymanager/ldf.html)
